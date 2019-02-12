@@ -4,7 +4,154 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+}
 
+.fundo-banner-equipe {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 20;
+  display: none;
+}
+.fundo-banner-equipe #frame {
+  width: 60%;
+  height: 100%;
+  margin: 0 20%;
+}
+
+.fundo-banner-equipe-fundo {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+}
+.fundo-banner-equipe-fundo .top-close {
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  padding: 5px;
+  font-size: 40px;
+  cursor: pointer;
+}
+.fundo-banner-equipe-fundo .nome-membro-equipe {
+  font-family: "Oswald", sans-serif;
+  color: #2c3e50;
+  font-size: 33px;
+  margin: 30px 0 0 0;
+  text-transform: uppercase;
+}
+.fundo-banner-equipe-fundo .proficao {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  color: #01c0b5;
+  font-size: 28px;
+  margin: 10px;
+}
+.fundo-banner-equipe-fundo .box-interno-banner-equipe {
+  width: 100%;
+  margin-top: 120px;
+}
+.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe {
+  border-top: #01c0b5 solid 1px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  box-sizing: border-box;
+}
+.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .foto-e-social {
+  margin: 30px 30px 0 0;
+}
+.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .foto-e-social figure {
+  width: 100%;
+}
+.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .foto-e-social figure img {
+  width: 100%;
+  height: 220px;
+}
+.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .foto-e-social li {
+  list-style: none;
+}
+.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo {
+  text-align: left;
+  list-style: none;
+  padding: 30px 20px 0 0;
+}
+.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo .titulo-curriculo {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  border-bottom: solid;
+  color: #01c0b5;
+  margin: 0 auto;
+  font-weight: 200;
+  width: 150px;
+  font-size: 25px;
+  padding: 10px;
+  margin: 0 !important;
+  padding: 10px 0 10px 0;
+  width: 100%;
+  margin-bottom: 10px;
+  border-bottom: 1px solid;
+}
+.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo p {
+  font-family: "Open Sans", sans-serif;
+  color: #7b838c;
+  font-size: 18px;
+  font-weight: none;
+}
+.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo li {
+  list-style: none;
+  margin: 10px 0;
+}
+.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo .experiencia p {
+  font-family: "Open Sans", sans-serif;
+  color: #7b838c;
+  font-size: 19px;
+  font-weight: none;
+}
+.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo .habilidades .habilidade-titulo {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  border-bottom: solid;
+  color: #01c0b5;
+  margin: 0 auto;
+  font-weight: 200;
+  width: 150px;
+  font-size: 25px;
+  padding: 10px;
+  margin: 0;
+  width: 100%;
+  margin-bottom: 10px;
+  border-bottom: 1px solid;
+}
+.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo .habilidades .habilidade-nome {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  text-transform: inherit;
+  color: #2c3e50;
+  font-size: 16px;
+  padding: 10px;
+  font-size: 20px;
+  margin: 0;
+  width: 100%;
+  margin-bottom: 10px;
+  border-bottom: 1px solid;
+  padding: 10px 0 10px 0;
+}
+.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo .habilidades .habilidade-nome .porcentagem {
+  float: right;
+}
+.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo .habilidades .tarja-completa-borda {
+  width: 100%;
+  border: solid 2px #2c3e50;
+}
+.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo .habilidades .tarja-completa-borda .tarja-conhecimento-prcentagem {
+  width: 60%;
+  height: 10px;
+  background-color: #01c0b5;
+}
 
 .cabecario {
   height: 600px;
@@ -207,7 +354,6 @@
 }
 .especialidades .container-cards-especialidades .card-especialidade {
   width: 100%;
-  max-width: 350px;
 }
 .especialidades .container-cards-especialidades .card-especialidade .caixa-img-01 {
   height: 200px;
@@ -518,6 +664,7 @@
 }
 .testemunhas .box-testemunhas-grid .card-testemunha {
   position: relative;
+  margin: 20px 0;
 }
 .testemunhas .box-testemunhas-grid .card-testemunha img {
   width: 100px;
@@ -915,6 +1062,150 @@
 .rodape .list .item-list li {
   display: inline-block;
   margin: 10px;
+}
+
+@media (max-width: 859px) {
+  .contato .form {
+    padding: 2%;
+  }
+
+  .clientes ul {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 50% 50%;
+  }
+  .clientes ul li {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .icon-hamburger {
+    display: none;
+  }
+}
+@media (max-width: 1200px) {
+  .menu {
+    display: none;
+  }
+
+  .icon-hamburger {
+    display: block;
+    float: right;
+    margin: 12px;
+  }
+
+  .especialidades .container-cards-especialidades {
+    grid-template-columns: 50% 50%;
+  }
+
+  .curiosidades ul li {
+    display: block;
+  }
+
+  .equipe .caixa-menbros-equipe {
+    grid-template-columns: 50% 50%;
+  }
+
+  .servicos .container-cards-servico {
+    grid-template-columns: 50% 50%;
+  }
+
+  .testemunhas .box-testemunhas-grid {
+    grid-template-columns: 100%;
+  }
+
+  .portfolio .grid-trabalhos {
+    grid-template-columns: 50% 50%;
+  }
+
+  .blog .container-posts {
+    grid-template-columns: 50% 50%;
+  }
+
+  .contato .form form {
+    display: block;
+  }
+
+  .contato .form form .inputs {
+    width: 100%;
+  }
+
+  .contato .form form .textarea {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .cabecario .caixa-texto {
+    margin: 60px auto 0 auto;
+  }
+
+  .cabecario .bullets {
+    margin-top: 28px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .especialidades .container-cards-especialidades {
+    grid-template-columns: 100%;
+  }
+
+  .curiosidades ul li {
+    display: block;
+  }
+
+  .equipe .caixa-menbros-equipe {
+    grid-template-columns: 100%;
+  }
+
+  .servicos .container-cards-servico {
+    grid-template-columns: 100%;
+  }
+
+  .testemunhas .box-testemunhas-grid {
+    grid-template-columns: 100%;
+  }
+
+  .testemunhas .box-testemunhas-grid .card-testemunha img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    float: none;
+    padding: 0 79px;
+  }
+
+  .portfolio .grid-trabalhos {
+    grid-template-columns: 100%;
+  }
+
+  .blog .container-posts {
+    grid-template-columns: 100%;
+  }
+
+  .contato .meios-contato p {
+    font-size: 20px !important;
+  }
+
+  .contato .form {
+    padding: 0;
+  }
+
+  .contato .form form {
+    display: block;
+  }
+
+  .contato .form form .inputs {
+    width: 100%;
+  }
+
+  .contato .form form .textarea {
+    width: 100%;
+  }
+
+  .rodape .list .item-list {
+    margin-left: 0;
+  }
 }
 
 /*# sourceMappingURL=stylesass.css.map */
