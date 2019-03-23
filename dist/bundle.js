@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -70,12 +70,926 @@
 "use strict";
 
 
-window.$ = window.jQuery = __webpack_require__(1);
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = dadosWorks;
+function dadosWorks() {
+    var works = [{
+        tipo: "design",
+        titulo: "ANGRI CRIATIVE",
+        sub_titulo: "desenvolvimento design",
+        url_img: "url(./imgs/img-works-01.jpg)"
+    }, {
+        tipo: "websites",
+        titulo: "ANGRI CRIATIVE",
+        sub_titulo: "desenvolvimento design",
+        url_img: "url(./imgs/img-works-02.jpg)"
+    }, {
+        tipo: "sistemas",
+        titulo: "ANGRI CRIATIVE",
+        sub_titulo: "desenvolvimento design",
+        url_img: "url(./imgs/img-works-03.jpg)"
+    }, {
+        tipo: "logos",
+        titulo: "ANGRI CRIATIVE",
+        sub_titulo: "desenvolvimento design",
+        url_img: "url(./imgs/img-works-04.jpg)"
+    }, {
+        tipo: "design",
+        titulo: "ANGRI CRIATIVE",
+        sub_titulo: "desenvolvimento design",
+        url_img: "url(./imgs/img-works-01.jpg)"
+    }, {
+        tipo: "websites",
+        titulo: "ANGRI CRIATIVE",
+        sub_titulo: "desenvolvimento design",
+        url_img: "url(./imgs/img-works-02.jpg)"
+    }, {
+        tipo: "sistemas",
+        titulo: "ANGRI CRIATIVE",
+        sub_titulo: "desenvolvimento design",
+        url_img: "url(./imgs/img-works-03.jpg)"
+    }, {
+        tipo: "logos",
+        titulo: "ANGRI CRIATIVE",
+        sub_titulo: "desenvolvimento design",
+        url_img: "url(./imgs/img-works-04.jpg)"
+    }, {
+        tipo: "design",
+        titulo: "ANGRI CRIATIVE",
+        sub_titulo: "desenvolvimento design",
+        url_img: "url(./imgs/img-works-01.jpg)"
+    }, {
+        tipo: "websites",
+        titulo: "ANGRI CRIATIVE",
+        sub_titulo: "desenvolvimento design",
+        url_img: "url(./imgs/img-works-02.jpg)"
+    }, {
+        tipo: "sistemas",
+        titulo: "ANGRI CRIATIVE",
+        sub_titulo: "desenvolvimento design",
+        url_img: "url(./imgs/img-works-03.jpg)"
+    }, {
+        tipo: "logos",
+        titulo: "ANGRI CRIATIVE",
+        sub_titulo: "desenvolvimento design",
+        url_img: "url(./imgs/img-works-04.jpg)"
+    }, {
+        tipo: "logos",
+        titulo: "ANGRI CRIATIVE",
+        sub_titulo: "desenvolvimento design",
+        url_img: "url(./imgs/img-works-04.jpg)"
+    }, {
+        tipo: "logos",
+        titulo: "ANGRI CRIATIVE",
+        sub_titulo: "desenvolvimento design",
+        url_img: "url(./imgs/img-works-04.jpg)"
+    }, {
+        tipo: "logos",
+        titulo: "ANGRI CRIATIVE",
+        sub_titulo: "desenvolvimento design",
+        url_img: "url(./imgs/img-works-04.jpg)"
+    }];
 
-__webpack_require__(2);
+    return works;
+}
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+var formatRegExp = /%[sdj%]/g;
+exports.format = function(f) {
+  if (!isString(f)) {
+    var objects = [];
+    for (var i = 0; i < arguments.length; i++) {
+      objects.push(inspect(arguments[i]));
+    }
+    return objects.join(' ');
+  }
+
+  var i = 1;
+  var args = arguments;
+  var len = args.length;
+  var str = String(f).replace(formatRegExp, function(x) {
+    if (x === '%%') return '%';
+    if (i >= len) return x;
+    switch (x) {
+      case '%s': return String(args[i++]);
+      case '%d': return Number(args[i++]);
+      case '%j':
+        try {
+          return JSON.stringify(args[i++]);
+        } catch (_) {
+          return '[Circular]';
+        }
+      default:
+        return x;
+    }
+  });
+  for (var x = args[i]; i < len; x = args[++i]) {
+    if (isNull(x) || !isObject(x)) {
+      str += ' ' + x;
+    } else {
+      str += ' ' + inspect(x);
+    }
+  }
+  return str;
+};
+
+
+// Mark that a method should not be used.
+// Returns a modified function which warns once by default.
+// If --no-deprecation is set, then it is a no-op.
+exports.deprecate = function(fn, msg) {
+  // Allow for deprecating things in the process of starting up.
+  if (isUndefined(global.process)) {
+    return function() {
+      return exports.deprecate(fn, msg).apply(this, arguments);
+    };
+  }
+
+  if (process.noDeprecation === true) {
+    return fn;
+  }
+
+  var warned = false;
+  function deprecated() {
+    if (!warned) {
+      if (process.throwDeprecation) {
+        throw new Error(msg);
+      } else if (process.traceDeprecation) {
+        console.trace(msg);
+      } else {
+        console.error(msg);
+      }
+      warned = true;
+    }
+    return fn.apply(this, arguments);
+  }
+
+  return deprecated;
+};
+
+
+var debugs = {};
+var debugEnviron;
+exports.debuglog = function(set) {
+  if (isUndefined(debugEnviron))
+    debugEnviron = process.env.NODE_DEBUG || '';
+  set = set.toUpperCase();
+  if (!debugs[set]) {
+    if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
+      var pid = process.pid;
+      debugs[set] = function() {
+        var msg = exports.format.apply(exports, arguments);
+        console.error('%s %d: %s', set, pid, msg);
+      };
+    } else {
+      debugs[set] = function() {};
+    }
+  }
+  return debugs[set];
+};
+
+
+/**
+ * Echos the value of a value. Trys to print the value out
+ * in the best way possible given the different types.
+ *
+ * @param {Object} obj The object to print out.
+ * @param {Object} opts Optional options object that alters the output.
+ */
+/* legacy: obj, showHidden, depth, colors*/
+function inspect(obj, opts) {
+  // default options
+  var ctx = {
+    seen: [],
+    stylize: stylizeNoColor
+  };
+  // legacy...
+  if (arguments.length >= 3) ctx.depth = arguments[2];
+  if (arguments.length >= 4) ctx.colors = arguments[3];
+  if (isBoolean(opts)) {
+    // legacy...
+    ctx.showHidden = opts;
+  } else if (opts) {
+    // got an "options" object
+    exports._extend(ctx, opts);
+  }
+  // set default options
+  if (isUndefined(ctx.showHidden)) ctx.showHidden = false;
+  if (isUndefined(ctx.depth)) ctx.depth = 2;
+  if (isUndefined(ctx.colors)) ctx.colors = false;
+  if (isUndefined(ctx.customInspect)) ctx.customInspect = true;
+  if (ctx.colors) ctx.stylize = stylizeWithColor;
+  return formatValue(ctx, obj, ctx.depth);
+}
+exports.inspect = inspect;
+
+
+// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
+inspect.colors = {
+  'bold' : [1, 22],
+  'italic' : [3, 23],
+  'underline' : [4, 24],
+  'inverse' : [7, 27],
+  'white' : [37, 39],
+  'grey' : [90, 39],
+  'black' : [30, 39],
+  'blue' : [34, 39],
+  'cyan' : [36, 39],
+  'green' : [32, 39],
+  'magenta' : [35, 39],
+  'red' : [31, 39],
+  'yellow' : [33, 39]
+};
+
+// Don't use 'blue' not visible on cmd.exe
+inspect.styles = {
+  'special': 'cyan',
+  'number': 'yellow',
+  'boolean': 'yellow',
+  'undefined': 'grey',
+  'null': 'bold',
+  'string': 'green',
+  'date': 'magenta',
+  // "name": intentionally not styling
+  'regexp': 'red'
+};
+
+
+function stylizeWithColor(str, styleType) {
+  var style = inspect.styles[styleType];
+
+  if (style) {
+    return '\u001b[' + inspect.colors[style][0] + 'm' + str +
+           '\u001b[' + inspect.colors[style][1] + 'm';
+  } else {
+    return str;
+  }
+}
+
+
+function stylizeNoColor(str, styleType) {
+  return str;
+}
+
+
+function arrayToHash(array) {
+  var hash = {};
+
+  array.forEach(function(val, idx) {
+    hash[val] = true;
+  });
+
+  return hash;
+}
+
+
+function formatValue(ctx, value, recurseTimes) {
+  // Provide a hook for user-specified inspect functions.
+  // Check that value is an object with an inspect function on it
+  if (ctx.customInspect &&
+      value &&
+      isFunction(value.inspect) &&
+      // Filter out the util module, it's inspect function is special
+      value.inspect !== exports.inspect &&
+      // Also filter out any prototype objects using the circular check.
+      !(value.constructor && value.constructor.prototype === value)) {
+    var ret = value.inspect(recurseTimes, ctx);
+    if (!isString(ret)) {
+      ret = formatValue(ctx, ret, recurseTimes);
+    }
+    return ret;
+  }
+
+  // Primitive types cannot have properties
+  var primitive = formatPrimitive(ctx, value);
+  if (primitive) {
+    return primitive;
+  }
+
+  // Look up the keys of the object.
+  var keys = Object.keys(value);
+  var visibleKeys = arrayToHash(keys);
+
+  if (ctx.showHidden) {
+    keys = Object.getOwnPropertyNames(value);
+  }
+
+  // IE doesn't make error fields non-enumerable
+  // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
+  if (isError(value)
+      && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
+    return formatError(value);
+  }
+
+  // Some type of object without properties can be shortcutted.
+  if (keys.length === 0) {
+    if (isFunction(value)) {
+      var name = value.name ? ': ' + value.name : '';
+      return ctx.stylize('[Function' + name + ']', 'special');
+    }
+    if (isRegExp(value)) {
+      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
+    }
+    if (isDate(value)) {
+      return ctx.stylize(Date.prototype.toString.call(value), 'date');
+    }
+    if (isError(value)) {
+      return formatError(value);
+    }
+  }
+
+  var base = '', array = false, braces = ['{', '}'];
+
+  // Make Array say that they are Array
+  if (isArray(value)) {
+    array = true;
+    braces = ['[', ']'];
+  }
+
+  // Make functions say that they are functions
+  if (isFunction(value)) {
+    var n = value.name ? ': ' + value.name : '';
+    base = ' [Function' + n + ']';
+  }
+
+  // Make RegExps say that they are RegExps
+  if (isRegExp(value)) {
+    base = ' ' + RegExp.prototype.toString.call(value);
+  }
+
+  // Make dates with properties first say the date
+  if (isDate(value)) {
+    base = ' ' + Date.prototype.toUTCString.call(value);
+  }
+
+  // Make error with message first say the error
+  if (isError(value)) {
+    base = ' ' + formatError(value);
+  }
+
+  if (keys.length === 0 && (!array || value.length == 0)) {
+    return braces[0] + base + braces[1];
+  }
+
+  if (recurseTimes < 0) {
+    if (isRegExp(value)) {
+      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
+    } else {
+      return ctx.stylize('[Object]', 'special');
+    }
+  }
+
+  ctx.seen.push(value);
+
+  var output;
+  if (array) {
+    output = formatArray(ctx, value, recurseTimes, visibleKeys, keys);
+  } else {
+    output = keys.map(function(key) {
+      return formatProperty(ctx, value, recurseTimes, visibleKeys, key, array);
+    });
+  }
+
+  ctx.seen.pop();
+
+  return reduceToSingleString(output, base, braces);
+}
+
+
+function formatPrimitive(ctx, value) {
+  if (isUndefined(value))
+    return ctx.stylize('undefined', 'undefined');
+  if (isString(value)) {
+    var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '')
+                                             .replace(/'/g, "\\'")
+                                             .replace(/\\"/g, '"') + '\'';
+    return ctx.stylize(simple, 'string');
+  }
+  if (isNumber(value))
+    return ctx.stylize('' + value, 'number');
+  if (isBoolean(value))
+    return ctx.stylize('' + value, 'boolean');
+  // For some reason typeof null is "object", so special case here.
+  if (isNull(value))
+    return ctx.stylize('null', 'null');
+}
+
+
+function formatError(value) {
+  return '[' + Error.prototype.toString.call(value) + ']';
+}
+
+
+function formatArray(ctx, value, recurseTimes, visibleKeys, keys) {
+  var output = [];
+  for (var i = 0, l = value.length; i < l; ++i) {
+    if (hasOwnProperty(value, String(i))) {
+      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
+          String(i), true));
+    } else {
+      output.push('');
+    }
+  }
+  keys.forEach(function(key) {
+    if (!key.match(/^\d+$/)) {
+      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
+          key, true));
+    }
+  });
+  return output;
+}
+
+
+function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
+  var name, str, desc;
+  desc = Object.getOwnPropertyDescriptor(value, key) || { value: value[key] };
+  if (desc.get) {
+    if (desc.set) {
+      str = ctx.stylize('[Getter/Setter]', 'special');
+    } else {
+      str = ctx.stylize('[Getter]', 'special');
+    }
+  } else {
+    if (desc.set) {
+      str = ctx.stylize('[Setter]', 'special');
+    }
+  }
+  if (!hasOwnProperty(visibleKeys, key)) {
+    name = '[' + key + ']';
+  }
+  if (!str) {
+    if (ctx.seen.indexOf(desc.value) < 0) {
+      if (isNull(recurseTimes)) {
+        str = formatValue(ctx, desc.value, null);
+      } else {
+        str = formatValue(ctx, desc.value, recurseTimes - 1);
+      }
+      if (str.indexOf('\n') > -1) {
+        if (array) {
+          str = str.split('\n').map(function(line) {
+            return '  ' + line;
+          }).join('\n').substr(2);
+        } else {
+          str = '\n' + str.split('\n').map(function(line) {
+            return '   ' + line;
+          }).join('\n');
+        }
+      }
+    } else {
+      str = ctx.stylize('[Circular]', 'special');
+    }
+  }
+  if (isUndefined(name)) {
+    if (array && key.match(/^\d+$/)) {
+      return str;
+    }
+    name = JSON.stringify('' + key);
+    if (name.match(/^"([a-zA-Z_][a-zA-Z_0-9]*)"$/)) {
+      name = name.substr(1, name.length - 2);
+      name = ctx.stylize(name, 'name');
+    } else {
+      name = name.replace(/'/g, "\\'")
+                 .replace(/\\"/g, '"')
+                 .replace(/(^"|"$)/g, "'");
+      name = ctx.stylize(name, 'string');
+    }
+  }
+
+  return name + ': ' + str;
+}
+
+
+function reduceToSingleString(output, base, braces) {
+  var numLinesEst = 0;
+  var length = output.reduce(function(prev, cur) {
+    numLinesEst++;
+    if (cur.indexOf('\n') >= 0) numLinesEst++;
+    return prev + cur.replace(/\u001b\[\d\d?m/g, '').length + 1;
+  }, 0);
+
+  if (length > 60) {
+    return braces[0] +
+           (base === '' ? '' : base + '\n ') +
+           ' ' +
+           output.join(',\n  ') +
+           ' ' +
+           braces[1];
+  }
+
+  return braces[0] + base + ' ' + output.join(', ') + ' ' + braces[1];
+}
+
+
+// NOTE: These type checking functions intentionally don't use `instanceof`
+// because it is fragile and can be easily faked with `Object.create()`.
+function isArray(ar) {
+  return Array.isArray(ar);
+}
+exports.isArray = isArray;
+
+function isBoolean(arg) {
+  return typeof arg === 'boolean';
+}
+exports.isBoolean = isBoolean;
+
+function isNull(arg) {
+  return arg === null;
+}
+exports.isNull = isNull;
+
+function isNullOrUndefined(arg) {
+  return arg == null;
+}
+exports.isNullOrUndefined = isNullOrUndefined;
+
+function isNumber(arg) {
+  return typeof arg === 'number';
+}
+exports.isNumber = isNumber;
+
+function isString(arg) {
+  return typeof arg === 'string';
+}
+exports.isString = isString;
+
+function isSymbol(arg) {
+  return typeof arg === 'symbol';
+}
+exports.isSymbol = isSymbol;
+
+function isUndefined(arg) {
+  return arg === void 0;
+}
+exports.isUndefined = isUndefined;
+
+function isRegExp(re) {
+  return isObject(re) && objectToString(re) === '[object RegExp]';
+}
+exports.isRegExp = isRegExp;
+
+function isObject(arg) {
+  return typeof arg === 'object' && arg !== null;
+}
+exports.isObject = isObject;
+
+function isDate(d) {
+  return isObject(d) && objectToString(d) === '[object Date]';
+}
+exports.isDate = isDate;
+
+function isError(e) {
+  return isObject(e) &&
+      (objectToString(e) === '[object Error]' || e instanceof Error);
+}
+exports.isError = isError;
+
+function isFunction(arg) {
+  return typeof arg === 'function';
+}
+exports.isFunction = isFunction;
+
+function isPrimitive(arg) {
+  return arg === null ||
+         typeof arg === 'boolean' ||
+         typeof arg === 'number' ||
+         typeof arg === 'string' ||
+         typeof arg === 'symbol' ||  // ES6 symbol
+         typeof arg === 'undefined';
+}
+exports.isPrimitive = isPrimitive;
+
+exports.isBuffer = __webpack_require__(10);
+
+function objectToString(o) {
+  return Object.prototype.toString.call(o);
+}
+
+
+function pad(n) {
+  return n < 10 ? '0' + n.toString(10) : n.toString(10);
+}
+
+
+var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+              'Oct', 'Nov', 'Dec'];
+
+// 26 Feb 16:19:34
+function timestamp() {
+  var d = new Date();
+  var time = [pad(d.getHours()),
+              pad(d.getMinutes()),
+              pad(d.getSeconds())].join(':');
+  return [d.getDate(), months[d.getMonth()], time].join(' ');
+}
+
+
+// log is just a thin wrapper to console.log that prepends a timestamp
+exports.log = function() {
+  console.log('%s - %s', timestamp(), exports.format.apply(exports, arguments));
+};
+
+
+/**
+ * Inherit the prototype methods from one constructor into another.
+ *
+ * The Function.prototype.inherits from lang.js rewritten as a standalone
+ * function (not on Function.prototype). NOTE: If this file is to be loaded
+ * during bootstrapping this function needs to be rewritten using some native
+ * functions as prototype setup using normal JavaScript does not work as
+ * expected during bootstrapping (see mirror.js in r114903).
+ *
+ * @param {function} ctor Constructor function which needs to inherit the
+ *     prototype.
+ * @param {function} superCtor Constructor function to inherit prototype from.
+ */
+exports.inherits = __webpack_require__(11);
+
+exports._extend = function(origin, add) {
+  // Don't do anything if add isn't an object
+  if (!add || !isObject(add)) return origin;
+
+  var keys = Object.keys(add);
+  var i = keys.length;
+  while (i--) {
+    origin[keys[i]] = add[keys[i]];
+  }
+  return origin;
+};
+
+function hasOwnProperty(obj, prop) {
+  return Object.prototype.hasOwnProperty.call(obj, prop);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(9)))
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = criaElementoBAnner;
+
+var _dadosMembroEquipe = __webpack_require__(3);
+
+var _dadosMembroEquipe2 = _interopRequireDefault(_dadosMembroEquipe);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import abreFechaBanner from './abreFechaBanner';
+
+
+var membro = (0, _dadosMembroEquipe2.default)();
+
+function criaElementoBAnner(number) {
+    var elemeto = document.querySelector('.container-banner').innerHTML = '\n    <div class="top-close">\n        <span style = "color: red" class="bt-close"><i class="fas fa-times-circle fa-1x"></i> fechar</span>\n    </div>\n\n    <section class="box-interno-banner">          \n    <h2 class="nome-membro-equipe">' + membro[number].nome + '</h2>\n    <p class="proficao"> ' + membro[number].proficao + ' </p>\n\n        <div class="conteudo-principal-banner-equipe">\n\n            <div class="foto-e-social">\n                <figure>\n                    <img src="' + membro[number].srcImg + '" alt="foto-membro-equipe">\n                </figure>\n                <ul class = "menu-links">\n                    <li><a href="#"><i class="fab fa-facebook-square fa-2x icon"></i></a></li>\n                    <li><a href="#"><i class="fab fa-twitter-square fa-2x icon"></i></a></li>\n                    <li><a href="#"><i class="fab fa-instagram fa-2x icon"></i></a></li>\n                    <li><a href="#"><i class="fab fa-linkedin fa-2x icon"></i></a></li>\n                </ul>\n            </div>\n\n            <div class="informacoes-pessoais">\n\n            <div class="biografia">\n                <h2 class="titulo-curriculo">biografia</h2>\n                <p>' + membro[number].biografia + '</p>\n            </div>\n\n            <div class="formacao">\n                <h2 class="titulo-curriculo">forma\xE7\xE3o</h2>\n                <p>' + membro[number].formacao + '</p>\n            </div>\n\n            <div class="experiencia">\n                <h2 class="titulo-curriculo">experi\xEAncia</h2>                \n                <h3>' + membro[number].experiencia.primeiraExperiencia.data + '</h3>\n                <p>' + membro[number].experiencia.primeiraExperiencia.nome + '</p>\n                <p>' + membro[number].experiencia.primeiraExperiencia.cargo + '</p>\n\n                <h3>10/2017</h3>\n                <p>nome da empresa</p>\n                <p>programador front-end</p>\n\n                <h3>10/2017</h3>\n                <p>nome da empresa</p>\n                <p>programador front-end</p>\n            </div>\n\n            <div class="habilidades">\n\n                <h2 class="habilidade-titulo">HABILIADDES</h2>\n                <ul>\n                    <li>\n                        <h2 class="habilidade-nome">' + membro[number].habilidades[0].nome + '<span class="porcentagem">' + membro[number].habilidades[0].nivel + '</span></h2>\n                        <div  class="tarja-completa-borda">\n                            <div class="tarja-conhecimento-porcentagem" style = "width: ' + membro[number].habilidades[0].nivel + '"></div>\n                        </div>\n                        \n                    </li>\n\n                    <li>\n                        <h2 class="habilidade-nome">' + membro[number].habilidades[1].nome + '<span class="porcentagem">' + membro[number].habilidades[1].nivel + '</span></h2>\n                        <div  class="tarja-completa-borda">\n                            <div class="tarja-conhecimento-porcentagem" style = "width: ' + membro[number].habilidades[1].nivel + '"></div>\n                        </div>\n                        \n                    </li>\n\n                    <li>\n                        <h2 class="habilidade-nome">' + membro[0].habilidades[2].nome + '<span class="porcentagem">' + membro[0].habilidades[2].nivel + '</span></h2>\n                        <div  class="tarja-completa-borda">\n                            <div class="tarja-conhecimento-porcentagem" style = "width: ' + membro[0].habilidades[2].nivel + '"></div>\n                        </div>\n                        \n                    </li>\n\n                    <li>\n                        <h2 class="habilidade-nome">' + membro[0].habilidades[3].nome + '<span class="porcentagem">' + membro[0].habilidades[3].nivel + '</span></h2>\n                        <div  class="tarja-completa-borda">\n                            <div class="tarja-conhecimento-porcentagem" style = "width: ' + membro[0].habilidades[3].nivel + '"></div>\n                        </div>\n                        \n                    </li>\n                </ul>\n\n            </div>\n\n        </div>                 \n    </section>\n\n';
+
+    return elemeto;
+}
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = dadosMembroEquipe;
+function dadosMembroEquipe() {
+    var integranteEquipe = [{
+        srcImg: 'imgs/img-member-equipe-01.jpg',
+        linkFace: '',
+        linkTwitter: '',
+        nome: 'Luis Vieira',
+        proficao: 'Front End',
+        biografia: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in neque sed neque facilisis mattis non id elit. Donec semper blandit lorem, ut pharetra nulla ullamcorper a. Proin finibus, quam.',
+        formacao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in neque sed neque facilisis mattis non id elit. Donec semper blandit lorem, ut pharetra nulla ullamcorper a. Proin finibus, quam.',
+        experiencia: {
+            primeiraExperiencia: {
+                data: '10/2017',
+                nome: 'nome da empresa',
+                cargo: 'programador front-end'
+            },
+            segundaExperiencia: {
+                data: '10/2017',
+                nome: 'nome da empresa',
+                cargo: 'programador front-end'
+            }
+        },
+        habilidades: [{
+            nome: 'HTML',
+            nivel: '70%'
+        }, {
+            nome: 'CSS',
+            nivel: '50%'
+        }, {
+            nome: 'JavaScript',
+            nivel: '100%'
+        }, {
+            nome: 'Sass',
+            nivel: '80%'
+        }]
+    }, {
+        srcImg: 'imgs/img-member-equipe-02.jpg',
+        linkFace: '',
+        linkTwitter: '',
+        nome: 'Angela Maria',
+        proficao: 'Desenvolvedora Mobile',
+        biografia: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in neque sed neque facilisis mattis non id elit. Donec semper blandit lorem, ut pharetra nulla ullamcorper a. Proin finibus, quam.',
+        formacao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in neque sed neque facilisis mattis non id elit. Donec semper blandit lorem, ut pharetra nulla ullamcorper a. Proin finibus, quam.',
+        experiencia: {
+            primeiraExperiencia: {
+                data: '10/2017',
+                nome: 'nome da empresa',
+                cargo: 'programador front-end'
+            },
+            segundaExperiencia: {
+                data: '10/2017',
+                nome: 'nome da empresa',
+                cargo: 'programador front-end'
+            }
+        },
+        habilidades: [{
+            nome: 'Angular',
+            nivel: '70%'
+        }, {
+            nome: 'Phonegap',
+            nivel: '90%'
+        }, {
+            nome: 'JavaScript',
+            nivel: '100%'
+        }, {
+            nome: 'Sass',
+            nivel: '80%'
+        }]
+    }, {
+        srcImg: 'imgs/img-member-equipe-03.jpg',
+        linkFace: '',
+        linkTwitter: '',
+        nome: 'Marcos Viana',
+        proficao: 'Designer',
+        biografia: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in neque sed neque facilisis mattis non id elit. Donec semper blandit lorem, ut pharetra nulla ullamcorper a. Proin finibus, quam.',
+        formacao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in neque sed neque facilisis mattis non id elit. Donec semper blandit lorem, ut pharetra nulla ullamcorper a. Proin finibus, quam.',
+        experiencia: {
+            primeiraExperiencia: {
+                data: '10/2017',
+                nome: 'nome da empresa',
+                cargo: 'programador front-end'
+            },
+            segundaExperiencia: {
+                data: '10/2017',
+                nome: 'nome da empresa',
+                cargo: 'programador front-end'
+            }
+        },
+        habilidades: [{
+            nome: 'Photoshop',
+            nivel: '100%'
+        }, {
+            nome: 'Ilustrator',
+            nivel: '90%'
+        }, {
+            nome: 'HMML',
+            nivel: '50%'
+        }, {
+            nome: 'Designer',
+            nivel: '100%'
+        }]
+    }, {
+        srcImg: 'imgs/img-member-equipe-04.jpg',
+        linkFace: '',
+        linkTwitter: '',
+        nome: 'Patrícia Souza',
+        proficao: 'Back End',
+        biografia: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in neque sed neque facilisis mattis non id elit. Donec semper blandit lorem, ut pharetra nulla ullamcorper a. Proin finibus, quam.',
+        formacao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in neque sed neque facilisis mattis non id elit. Donec semper blandit lorem, ut pharetra nulla ullamcorper a. Proin finibus, quam.',
+        experiencia: {
+            primeiraExperiencia: {
+                data: '10/2017',
+                nome: 'nome da empresa',
+                cargo: 'programador front-end'
+            },
+            segundaExperiencia: {
+                data: '10/2017',
+                nome: 'nome da empresa',
+                cargo: 'programador front-end'
+            }
+        },
+        habilidades: [{
+            nome: 'C++',
+            nivel: '70%'
+        }, {
+            nome: 'Java',
+            nivel: '50%'
+        }, {
+            nome: 'Node',
+            nivel: '100%'
+        }, {
+            nome: 'Sass',
+            nivel: '30%'
+        }]
+    }];
+
+    return integranteEquipe;
+}
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = criaWork;
+
+var _dadosWorks = __webpack_require__(0);
+
+var _dadosWorks2 = _interopRequireDefault(_dadosWorks);
+
+var _util = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function criaWork() {
+
+    var dados_works = (0, _dadosWorks2.default)();
+    var grid_trabalhos = document.querySelector('.grid-trabalhos'); //div que contem os trabalhos 
+
+    var monta_work = function monta_work(titulo, subtitulo, class_img, url) {
+        return '<div class="card-work" style= "background-image: ' + url + ' ">\n            <div class="animacao-work">\n                <h3>' + titulo + '</h3>\n                <p>' + subtitulo + '</p>\n                <i class="far fa-eye fa-3x"></i>\n                <i></i>\n            </div>\n        </div>';
+    };
+
+    for (var index = 0; index < dados_works.length; index++) {
+        var element = dados_works[index];
+        grid_trabalhos.innerHTML += monta_work(element.titulo, element.sub_titulo, index, element.url_img);
+    }
+
+    // quardando a função monta_work e a variavel grid_trabalhos para reornalas
+    var retornos = [monta_work, grid_trabalhos];
+
+    return retornos;
+}
+criaWork();
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+window.$ = window.jQuery = __webpack_require__(6);
+
+__webpack_require__(7);
+
+__webpack_require__(12);
+__webpack_require__(2);
+__webpack_require__(3);
+
+__webpack_require__(13);
+__webpack_require__(4);
+__webpack_require__(0);
+__webpack_require__(14);
+__webpack_require__(15);
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10446,104 +11360,537 @@ return jQuery;
 
 
 /***/ }),
-/* 2 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(3),
-    getElements = _require.getElements,
-    getPayload = _require.getPayload,
-    clearPayload = _require.clearPayload,
-    setDisabled = _require.setDisabled,
-    clearForm = _require.clearForm;
+var _util = __webpack_require__(1);
 
-var elementIds = ['contact', 'name', 'email', 'phone', 'website', 'message', 'submit'];
+(function () {
 
-var elements = getElements(elementIds);
+  var header = document.querySelector('.cabecario');
+  // let itens_menu = document.querySelectorAll('.menu li')
+  var bullets = document.querySelectorAll('.bullets li');
+  var txt = document.querySelector('.caixa-texto p');
 
-fill();
+  // Cetas que trocam as imagend o header
+  var botao_esquerdo = document.querySelector('.btleft');
+  var botao_direito = document.querySelector('.btrigth');
+  // let cetas = document.querySelectorAll(".bt")
 
-function fill() {
-    $('#name').val('Vedovelli');
-    $('#email').val('vedovelli@gmail.com');
-    $('#phone').val('+5511 96556-9889');
-    $('#website').val('https://vedovelli.com.br');
-    $('#message').val('A mensagem a ser enviada');
-}
+  var imagens = ['img-cabecalho', 'escritorio-dev', 'mulher-segurando-tablet', 'mao-segurando-celular'];
+  var lista_texto = ['esse é o primeiro texto', 'esse é o segundo exto', 'esse é o terceiro texto', 'Esse é o quarto texto'];
+  var contador = 1;
 
-elements.contact.on('submit', function (event) {
-    event.preventDefault();
+  // Iniciando o seInterval carrocel ativo
+  carrocelAtivo(contador);
 
-    var values = getPayload(elements);
-    var payload = clearPayload(values);
+  var intervalo;
 
-    setDisabled(elements, true);
+  function carrocelAtivo(x) {
+    intervalo = setInterval(function () {
+      if (x > 3) {
+        x = 0;
+      }
 
-    setTimeout(function () {
-        clearForm(elements);
-        setDisabled(elements, false);
-        elements.name.focus();
-        alert('Mensagem enviada com sucesso');
-    }, 2000);
-});
-var minhavar = "conteudo da variavel";
+      muda(x);
+      x++;
+      contador = x;
+    }, 5000);
+  }
 
-var alerta = function alerta() {
-    return alert(minhavar);
-};
-alerta();
+  // Funçâo que para o setInterval do carrocel
+  function carrocelStop() {
+    window.clearInterval(intervalo);
+  }
+
+  // Adicionando evento aos bullets
+
+  var _loop = function _loop(index) {
+    bullets[index].addEventListener('click', function () {
+      carrocelStop();
+      muda(index);
+    });
+  };
+
+  for (var index = 0; index < bullets.length; index++) {
+    _loop(index);
+  }
+
+  // Incrementando e decrementando o contador e limitando o carocel
+
+  botao_esquerdo.addEventListener('click', function () {
+    carrocelStop();
+    contador--;
+    if (contador < 0) {
+      contador = 3;
+    }
+    muda(contador);
+  });
+
+  botao_direito.addEventListener('click', function () {
+    carrocelStop();
+    contador++;
+    if (contador > 3) {
+      contador = 0;
+    }
+    muda(contador);
+  });
+
+  function muda(x) {
+    header.style.backgroundImage = "url('imgs/" + imagens[x] + ".jpg')";
+
+    txt.textContent = lista_texto[x];
+    bullets.forEach(function (b) {
+      b.style.background = "#fff";
+      b.className = "off";
+    });
+
+    bullets[x].style.background = "rgba(216, 131, 85, 0.7)";
+    bullets[x].className = "ativo";
+  }
+})();
 
 /***/ }),
-/* 3 */
+/* 8 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+module.exports = function isBuffer(arg) {
+  return arg && typeof arg === 'object'
+    && typeof arg.copy === 'function'
+    && typeof arg.fill === 'function'
+    && typeof arg.readUInt8 === 'function';
+}
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+if (typeof Object.create === 'function') {
+  // implementation from standard node.js 'util' module
+  module.exports = function inherits(ctor, superCtor) {
+    ctor.super_ = superCtor
+    ctor.prototype = Object.create(superCtor.prototype, {
+      constructor: {
+        value: ctor,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+  };
+} else {
+  // old school shim for old browsers
+  module.exports = function inherits(ctor, superCtor) {
+    ctor.super_ = superCtor
+    var TempCtor = function () {}
+    TempCtor.prototype = superCtor.prototype
+    ctor.prototype = new TempCtor()
+    ctor.prototype.constructor = ctor
+  }
+}
+
+
+/***/ }),
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var getElements = function getElements(ids) {
-  return ids.reduce(function (acc, id) {
-    acc[id] = $('#' + id);
-    return acc;
-  }, {});
+var _criaElementoBAnner = __webpack_require__(2);
+
+var _criaElementoBAnner2 = _interopRequireDefault(_criaElementoBAnner);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// let elementoBanner = criaElementoBAnner(0);
+var banner_equipe = document.querySelector('.container-banner');
+var btn_membro = document.querySelectorAll('.btn-member-perfil');
+
+var _loop = function _loop(index) {
+    btn_membro[index].addEventListener('click', function () {
+
+        banner_equipe.innerHTML = (0, _criaElementoBAnner2.default)(index);
+        banner_equipe.style.display = "block";
+
+        //Fecha o Banner
+        var fecha_banner = document.querySelector('.top-close');
+        fecha_banner.addEventListener('click', function () {
+            banner_equipe.style.display = 'none';
+        });
+    });
 };
 
-function getPayload(elements) {
-  return Object.keys(elements).reduce(function (acc, prop) {
-    acc[prop] = elements[prop].val();
-    return acc;
-  }, {});
+for (var index = 0; index < btn_membro.length; index++) {
+    _loop(index);
 }
 
-function clearPayload(payload) {
-  Object.keys(payload).forEach(function (prop) {
-    if (payload[prop] == '') {
-      delete payload[prop];
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _criaWork = __webpack_require__(4);
+
+var _criaWork2 = _interopRequireDefault(_criaWork);
+
+var _dadosWorks = __webpack_require__(0);
+
+var _dadosWorks2 = _interopRequireDefault(_dadosWorks);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var itens_workd = document.querySelectorAll(".itens-works");
+
+var _loop = function _loop(x) {
+        itens_workd[x].addEventListener("click", function () {
+
+                var dados_works = (0, _dadosWorks2.default)();
+                var monta_card = (0, _criaWork2.default)()[0];
+                var grid_trabalhos = (0, _criaWork2.default)()[1];
+
+                grid_trabalhos.innerHTML = "";
+
+                for (var index = 0; index < dados_works.length; index++) {
+                        var element = dados_works[index];
+
+                        if (element.tipo == itens_workd[x].textContent) {
+                                grid_trabalhos.innerHTML += monta_card(element.titulo, element.sub_titulo, index, element.url_img);
+                        } else if (itens_workd[x].textContent == "todos") {
+                                grid_trabalhos.innerHTML += monta_card(element.titulo, element.sub_titulo, index, element.url_img);
+                        }
+                }
+        });
+};
+
+for (var x = 0; x < itens_workd.length; x++) {
+        _loop(x);
+}
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+(function () {
+    var container_menu_responsivo = document.querySelector('.container-menu-responsivo');
+    var links_menu = document.querySelectorAll('.item-lista');
+    var icon_hamburger = document.querySelector('.icon-hamburger');
+
+    var menuMobileOpen = false;
+
+    icon_hamburger.addEventListener('click', function () {
+
+        open_closed(menuMobileOpen);
+        menuMobileOpen = !menuMobileOpen;
+    });
+
+    function open_closed(menu_aberto) {
+        if (menu_aberto) {
+            container_menu_responsivo.style.right = "-685px";
+        } else {
+            container_menu_responsivo.style.right = "0";
+        }
     }
-  });
-  return payload;
-}
 
-function setDisabled(elements, state) {
-  Object.keys(elements).forEach(function (prop) {
-    elements[prop].attr('disabled', state);
-  });
-}
+    links_menu.forEach(function (x) {
+        x.addEventListener('click', function () {
+            container_menu_responsivo.style.right = "-685px";
+            menuMobileOpen = false;
+        });
+    });
+})();
 
-function clearForm(elements) {
-  Object.keys(elements).forEach(function (prop) {
-    elements[prop].val('');
-  });
-}
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = {
-  getElements: getElements,
-  getPayload: getPayload,
-  clearPayload: clearPayload,
-  setDisabled: setDisabled,
-  clearForm: clearForm
-};
+"use strict";
+
+
+var links_menu = document.querySelectorAll('.item-lista');
+var cabecarioTop = document.querySelector('.cabecario').offsetTop;
+var agenciaTop = document.querySelector('.agencia').offsetTop;
+var equipeTop = document.querySelector('.equipe').offsetTop;
+var servicoTop = document.querySelector('.servicos').offsetTop;
+var portfolioTop = document.querySelector('.portfolio').offsetTop;
+var contatoTop = document.querySelector('.contato').offsetTop;
+
+var container_menu_responsivo = document.querySelector('.container-menu-responsivo');
+
+links_menu.forEach(function (item) {
+    item.addEventListener("click", function () {
+        event.preventDefault();
+
+        switch (item.textContent) {
+            case "Home":
+                window.scrollTo({
+                    top: cabecarioTop,
+                    behavior: 'smooth'
+                });
+                break;
+
+            case "agência":
+                window.scrollTo({
+                    top: agenciaTop,
+                    behavior: 'smooth'
+                });
+                break;
+
+            case "equipe":
+                window.scroll({
+                    top: equipeTop,
+                    behavior: 'smooth'
+                });
+                break;
+
+            case "serviços":
+                window.scroll({
+                    top: servicoTop,
+                    behavior: 'smooth'
+                });
+                break;
+
+            case "portfólio":
+                window.scroll({
+                    top: portfolioTop,
+                    behavior: 'smooth'
+                });
+                break;
+
+            case "contato":
+                window.scroll({
+                    top: contatoTop,
+                    behavior: 'smooth'
+                });
+                break;
+        }
+    });
+});
 
 /***/ })
 /******/ ]);

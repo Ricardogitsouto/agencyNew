@@ -20,7 +20,9 @@ $paragrafos: 'Open Sans', sans-serif;
     color: #2c3e50;
     font-size: 16px;
     padding: 10px;
-
+    max-width: 500px;
+    margin: auto;
+    line-height: 1.5;
 }
 
 
@@ -32,47 +34,85 @@ $paragrafos: 'Open Sans', sans-serif;
 html,body{
     height: 100%;
     width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+body{
+    max-width: 1400px;
 }
 
-.fundo-banner-equipe{
-    background-color: rgba($color: #fff, $alpha: .9);
+.container-menu-responsivo{
     width: 100%;
+    position: fixed;
+    max-width: 400px;;
+    background-color: #fff;
+    z-index: 999;
+    top: 70px;
+    right:-685px;
+    transition: .5s;
+    .menu-mobile{
+
+        li{
+            text-align: center;
+            padding: 20px 0;
+            list-style: none;
+            
+
+            a{
+                text-decoration: none;
+                font-size: 25px;
+                font-family: $titulos-secoes;
+                color: #01c0b5;
+                padding: 9px 140px;
+                border: solid #ccc;
+                
+            }
+        }
+    }
+}
+
+.container-banner{
+   
+background-color: rgba($color: #2c3e50, $alpha: .8);
+width: 100%;
+height: 100%;
+position: fixed;
+z-index: 999;
+display: none;
+
+
+
+.top-close{
+    width: 70%;
+    position: fixed;
+    background-color: #fff;
+    padding: 5px 0;
+    margin: 0 15%;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1999;
+
+}
+
+.box-interno-banner{
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 70%;
     height: 100%;
     position: fixed;
-    z-index: 20;
-    display: none;
-
-    
-
-    #frame{
-        width: 60%;
-        height: 100%;
-        margin: 0 20%;      
-    }   
-}
-
-
-.fundo-banner-equipe-fundo{
-    width: 100%;
     text-align: center;
-    position: absolute;
-    z-index: 1;
-
-    .top-close{
-        width: 100%;
-        position: fixed;
-        background-color: #fff;
-        padding: 5px;
-        font-size: 40px;
-        cursor: pointer;
-    }
+    overflow: scroll;
+    margin: 0 15%;
+    padding: 0 5%;
+    box-sizing: border-box;
+    
+    
 
     .nome-membro-equipe{
         font-family: $titulos-secoes;
         color: #2c3e50;
         font-size: 33px;
-        // font-stretch: ultra-condensed;
-        margin: 30px 0 0 0;
+        margin: 65px 0 0 0;
         text-transform: uppercase;
 
     }
@@ -87,9 +127,7 @@ html,body{
     }
 
 
-    .box-interno-banner-equipe{
-    width: 100%;
-    margin-top: 120px;
+    
 
         .conteudo-principal-banner-equipe{           
             border-top: #01c0b5 solid 1px;;
@@ -109,11 +147,18 @@ html,body{
                 }
                 li{
                     list-style: none;
+                    display: inline;
+                    margin: 10px;
+                    color: #333;
+
+                    .icon{
+                        color: #333 !important;
+                    }
                 }
             }
 
 
-            .curriculo{
+            .informacoes-pessoais{
                 text-align: left;
                 list-style: none;
                 padding: 30px 20px 0 0;
@@ -150,6 +195,7 @@ html,body{
                     }
                 }
                 .habilidades{
+                    padding-bottom: 50px;
 
                     .habilidade-titulo{
                         @include titulos-padrao; 
@@ -175,8 +221,7 @@ html,body{
                     .tarja-completa-borda{
                         width: 100%;
                         border: solid 2px #2c3e50;
-                        .tarja-conhecimento-prcentagem{
-                            width: 60%;
+                        .tarja-conhecimento-porcentagem{
                             height: 10px;
                             background-color: #01c0b5;
                         }
@@ -188,7 +233,9 @@ html,body{
             }
 
         }
-    }
+    // }
+
+}
 
 }
 
@@ -207,23 +254,28 @@ html,body{
 
 
 
-
-
 .cabecario{
     height: 600px;
+    position: relative;
     background: url(../imgs/img-cabecalho.jpg) no-repeat;
-    background-size: cover;
-    background-position: center 68px;
+    background-size: 130% 100%;
     box-sizing: border-box;
-    
-   
+    animation-name: animacabecario;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transition: .5s;
 
-    
     .cabecalho-top{
+        max-width: 1400px;
+        width: 100%;
         height: 67px;;     
         background-color: #fff;
-        padding: 0 10%;
         border-top: solid 4px #2d3f51;
+        position: fixed;
+        box-sizing: border-box;
+        z-index: 998;
+        padding: 0 10%;
 
         .logo{
             position: relative;
@@ -242,6 +294,7 @@ html,body{
         .menu{
             float: right;
             width: 75%;
+            text-align: right;
 
             li{
                 display: inline-block;
@@ -289,13 +342,16 @@ html,body{
     }
 
     .caixa-texto{
-        width: 40%;
-        margin: 150px auto 0 auto;
+        width: 60%;
         padding: 50px;
         background-color: rgba($color: #d88355, $alpha: .7);
         color: #fff;
         text-align: center;
         line-height: 1.5;
+        box-sizing: border-box;
+        position: absolute;
+        top: 260px;
+        left: 20%;
 
         h1{
             font-size: 40px;
@@ -315,28 +371,33 @@ html,body{
         // border: 1px solid #fff;
         position: absolute;
         top: 300px;
+       
 
         .btleft{
             float: left;
             background-color: #000;
             color: #fff;
-            font-size: 40px;
-            padding: 5px;
+            font-size: 107px;
+            padding: 11px 10px;
             cursor: pointer;
+            position: relative;
         }
         .btrigth{
             float: right;
             color: #fff;
             background-color: #000;
-            font-size: 40px;
-            padding: 5px;
+            font-size: 107px;
+            padding: 11px 10px;
             cursor: pointer;
         }
     }
 
     .bullets{
         text-align: center;
-        margin-top: 90px;
+        position: absolute;
+        top: 500px;
+        left: 40%;
+        // box-shadow: ;
 
         :first-child{
             background-color:#f47933;
@@ -352,9 +413,17 @@ html,body{
     }
 }
 
+@keyframes  animacabecario{
+    from{
+        background-position:  0 0;
+    }
+    to{
+        background-position: 20% 20%;
+    } 
+}
+
 // ----------------------------------------------------------------------------------
 // Agencia-----------------------------------------------
-
 .agencia{
     padding: 70px 0 30px 0;
     text-align: center;
@@ -364,29 +433,30 @@ html,body{
         @include titulos-padrao;            
         }
         p{
-            @include paragrafos-padrao;
-        }
+            @include paragrafos-padrao();            
+    }
 }
 
 // ------------------------------------------------------------------------------------------
 // Especialidades--------------------------------------------------------------------
 
 .especialidades{
-background-color: #f5f5f5;
-text-align: center;
-padding: 79px 10%;
-#titulo{
-    @include titulos-padrao();
-    width: 100% !important;
-    border: none !important;
-}
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 40px 10% 0 10%;
+     
+    #titulo{
+        @include titulos-padrao();  
+        width: 350px;          
 
+    }
     .titulo-card{
         border: none !important;
         @include titulos-padrao;
         color: #2d3f51 !important;
         
     }
+    
     h3{
         color: #526a82 !important;
         @include paragrafos-padrao;
@@ -402,20 +472,25 @@ padding: 79px 10%;
         padding: 50px 0;
 
         .card-especialidade{
-            width: 100%;           
+            box-sizing: border-box;
+            width: 100%;
+            // padding: 0 8%;  
+            
+            .img-especialidade{
+                height: 171px;
+                width: 70%;
+                margin: auto;
+            }
 
             .caixa-img-01{
-                height: 200px;
                 background: url(../imgs/img-exemplo.png) no-repeat;
                 background-size: 100% 100%;;
             }
             .caixa-img-02{
-                height: 200px;
                 background: url(../imgs/experimente.png) no-repeat;
                 background-size: 100% 100%;;
             }
             .caixa-img-03{
-                height: 200px;
                 background: url(../imgs/perfeicao.png) no-repeat;
                 background-size: 100% 100%;;
             }
@@ -469,7 +544,7 @@ padding: 79px 10%;
 // Equipe
 .equipe{
 text-align: center;
-padding-top: 85px;
+padding-top: 50px;
 
 
     h2{
@@ -477,6 +552,9 @@ padding-top: 85px;
     }
     p{
         @include paragrafos-padrao;
+        // margin: 0 auto;
+        // max-width: 500px;
+
     }
     .caixa-menbros-equipe{
         padding: 60px 10%;
@@ -594,6 +672,7 @@ padding-top: 85px;
 
 .servicos{
     text-align: center;
+    padding-top: 50px;
 
     .titulo-sevico{
         @include titulos-padrao;
@@ -601,6 +680,7 @@ padding-top: 85px;
 
     .paragrafo-servico{
         @include paragrafos-padrao;
+        margin: 0 auto;
     }
 
     
@@ -765,6 +845,7 @@ padding-top: 85px;
 // Portfolio------------------------------------------------------------
 .portfolio{
     text-align: center;
+    padding: 70px;
 
     .texto-portfolio{
         padding: 40px 0;
@@ -776,6 +857,7 @@ padding-top: 85px;
 
    p{
     @include paragrafos-padrao;
+    margin: 0 auto;
    }
 
     .works{
@@ -841,41 +923,9 @@ padding-top: 85px;
 
                 &:hover > .animacao-work{                 
                     opacity: 1;
-                    transition: .5s;
+                    transition: .5s; 
                 }
             }
-
-            .work-01{
-                background-image: url(../imgs/img-works-01.jpg);
-            }
-            .work-02{
-                background-image: url(../imgs/img-works-02.jpg);
-            }
-            .work-03{
-                background-image: url(../imgs/img-works-03.jpg);
-            }
-            .work-04{
-                background-image: url(../imgs/img-works-01.jpg);
-            }
-            .work-05{
-                background-image: url(../imgs/img-works-02.jpg);
-            }
-            .work-06{
-                background-image: url(../imgs/img-works-03.jpg);
-            }
-            .work-07{
-                background-image: url(../imgs/img-works-01.jpg);
-            }
-            .work-08{
-                background-image: url(../imgs/img-works-02.jpg);
-            }
-            .work-09{
-                background-image: url(../imgs/img-works-03.jpg);
-            }
-            .work-10{
-                background-image: url(../imgs/img-works-01.jpg);
-            }
-
             
         }
      
@@ -890,7 +940,7 @@ padding-top: 85px;
     background-color: #f5f5f5;
     h2{
         @include titulos-padrao;
-        width: 43% !important;
+        width: 234px !important;
     }
     ul{
         margin-top: 20px;
@@ -939,7 +989,7 @@ padding-top: 85px;
             @include titulos-padrao;
         }
         p{
-            @include paragrafos-padrao;
+            @include paragrafos-padrao;    
         }
     }
 
@@ -999,6 +1049,7 @@ padding-top: 85px;
 // Contato---------------------------------------------------------------------------------
 .contato{
     text-align: center;
+    padding-top: 50px;
 
     .top-contato{
         padding: 40px;
@@ -1008,10 +1059,11 @@ padding-top: 85px;
 
         p{
             @include paragrafos-padrao;
+            margin: 0 auto;
         }
     }
     .meios-contato{
-        padding: 10%;
+        padding: 6%;
         background-image: url(../imgs/img-fundo-contato.jpg);
         background-size: 100% 100%;
         background-attachment: fixed;
@@ -1023,10 +1075,11 @@ padding-top: 85px;
             font-size: 30px !important
         }
         .number{
-            width: 20%;
+            width: 50%;
+            min-width: 160px;
             color: #000 !important;
             background-color: rgba($color: #fff, $alpha: .5);
-            padding: 10px 100px;
+            // padding: 10px 100px;
             margin: 0 auto;
         }
     }
@@ -1188,30 +1241,55 @@ padding: 30px 20%;
 
 // trabalhando o responsivo----------------------------------------------------------------
 @media(max-width: 1200px){
+
+
     .menu{
         display: none;
     }
     .icon-hamburger{
         display: block;
         float: right;
-        margin: 12px;
+        padding: 16px 30px;
+        cursor: pointer;
     }
    
 
-    .especialidades .container-cards-especialidades {
-        grid-template-columns: 50% 50%;
-    }
+  
 
     .curiosidades ul li{
-        display: block;
+        display: grid;
+        grid-template-columns: 100%;
     }
 
+    .conteudo-principal-banner-equipe{         
+        grid-template-columns: 40% 60% !important;
+      
+        
+        
+    }
+   
+     .box-interno-banner{
+            width: 80% !important; 
+            margin: 0 10% !important;
+            padding: 0 20px !important;
+            box-sizing: border-box !important;
+           
+        }
+    .card-especialidade{
+        .img-especialidade{
+            height: 171px;
+            width: 90% !important;
+            margin: auto;
+        }
+    }
+        
+
     .equipe .caixa-menbros-equipe{
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 33% 33% 33%;
     }
 
     .servicos .container-cards-servico{
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 33% 33% 33%;
     }
 
     .testemunhas .box-testemunhas-grid{
@@ -1236,13 +1314,121 @@ padding: 30px 20%;
     }
 }
 
-@media(max-width: 500px){
-    .cabecario .caixa-texto {
-        margin: 60px auto 0 auto;
+@media(min-width: 800px){
+    .curiosidades ul{
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
     }
 
-    .cabecario .bullets {
-        margin-top: 28px;
+}
+
+@media(max-width: 800px){
+    .cabecario{
+        height: 300px;
+       
+        
+
+        .caixa-texto{
+        
+            width: 70%;
+            height: 150px;
+            padding: 30px 10px;
+            position: absolute;
+            top: 98px;
+            left: 15%;
+
+            h1{
+                font-size: 30px;
+    
+            }
+            p{
+                @include paragrafos-padrao;
+                font-size: 18px !important;
+            }
+        }
+        .bullets{
+            position: absolute;
+            width: 50%;
+            top: 260px;
+            left: 25%;
+        }
+        
+        .cetas{
+            top: 150px;
+
+            .btleft{
+                font-size: 50px;
+            }
+    
+            .btrigth{
+                font-size: 50px;
+            }
+        }
+    }
+
+    .cards-especialidades{
+        width: 80%;
+    }
+    .especialidades .container-cards-especialidades {
+        grid-template-columns: 50% 50%;
+    }
+
+    .conteudo-principal-banner-equipe{         
+        grid-template-columns: 100% !important;
+        background-position: center;
+        
+        
+    }
+
+     .box-interno-banner{
+            width: 80%; 
+            margin: 0 10%;
+            padding: 0 20px;
+            box-sizing: border-box;
+           
+        }
+
+        .curiosidades ul{
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+        }
+
+        .equipe .caixa-menbros-equipe{
+            grid-template-columns: 59% 50%;
+        }
+
+        .servicos .container-cards-servico{
+            grid-template-columns: 50% 50%;
+        }
+        
+}
+@media(max-width: 700px){
+
+    .curiosidades ul{
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }  
+}
+
+
+@media(max-width: 500px){
+    .icon-hamburger{
+        padding: 18px;
+    }
+    .cabecario .caixa-texto {
+
+        width: 70%;
+        height: 150px;;
+        left: 15%;
+        top: 100px;
+        padding: 20px 10px;
+        box-sizing: border-box;
+    }
+
+    .cabecario .bullets { 
+        position: absolute;
+        width: 60%;
+        top: 260px;
     }
     .menu{
         display: none;
@@ -1252,9 +1438,18 @@ padding: 30px 20%;
         grid-template-columns: 100%;
     }
 
-    .curiosidades ul li{
-        display: block;
+    // .img-especialidade{
+    //     height: 171px;
+    //     width: 74%;
+    //     margin: auto;
+    // }
+
+    .curiosidades ul{
+        display: grid;
+        grid-template-columns: 100%;
     }
+
+    
 
     .equipe .caixa-menbros-equipe{
         grid-template-columns: 100%;

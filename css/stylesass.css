@@ -7,79 +7,113 @@
 html, body {
   height: 100%;
   width: 100%;
+  margin: 0 auto;
+  position: relative;
 }
 
-.fundo-banner-equipe {
-  background-color: rgba(255, 255, 255, 0.9);
+body {
+  max-width: 1400px;
+}
+
+.container-menu-responsivo {
+  width: 100%;
+  position: fixed;
+  max-width: 400px;
+  background-color: #fff;
+  z-index: 999;
+  top: 70px;
+  right: -685px;
+  transition: 0.5s;
+}
+.container-menu-responsivo .menu-mobile li {
+  text-align: center;
+  padding: 20px 0;
+  list-style: none;
+}
+.container-menu-responsivo .menu-mobile li a {
+  text-decoration: none;
+  font-size: 25px;
+  font-family: "Oswald", sans-serif;
+  color: #01c0b5;
+  padding: 9px 140px;
+  border: solid #ccc;
+}
+
+.container-banner {
+  background-color: rgba(44, 62, 80, 0.8);
   width: 100%;
   height: 100%;
   position: fixed;
-  z-index: 20;
+  z-index: 999;
   display: none;
 }
-.fundo-banner-equipe #frame {
-  width: 60%;
-  height: 100%;
-  margin: 0 20%;
-}
-
-.fundo-banner-equipe-fundo {
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  z-index: 1;
-}
-.fundo-banner-equipe-fundo .top-close {
-  width: 100%;
+.container-banner .top-close {
+  width: 70%;
   position: fixed;
   background-color: #fff;
-  padding: 5px;
-  font-size: 40px;
+  padding: 5px 0;
+  margin: 0 15%;
+  font-size: 30px;
+  text-align: center;
   cursor: pointer;
+  z-index: 1999;
 }
-.fundo-banner-equipe-fundo .nome-membro-equipe {
+.container-banner .box-interno-banner {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 70%;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  overflow: scroll;
+  margin: 0 15%;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+.container-banner .box-interno-banner .nome-membro-equipe {
   font-family: "Oswald", sans-serif;
   color: #2c3e50;
   font-size: 33px;
-  margin: 30px 0 0 0;
+  margin: 65px 0 0 0;
   text-transform: uppercase;
 }
-.fundo-banner-equipe-fundo .proficao {
+.container-banner .box-interno-banner .proficao {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   color: #01c0b5;
   font-size: 28px;
   margin: 10px;
 }
-.fundo-banner-equipe-fundo .box-interno-banner-equipe {
-  width: 100%;
-  margin-top: 120px;
-}
-.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe {
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe {
   border-top: #01c0b5 solid 1px;
   display: grid;
   grid-template-columns: 40% 60%;
   box-sizing: border-box;
 }
-.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .foto-e-social {
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe .foto-e-social {
   margin: 30px 30px 0 0;
 }
-.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .foto-e-social figure {
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe .foto-e-social figure {
   width: 100%;
 }
-.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .foto-e-social figure img {
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe .foto-e-social figure img {
   width: 100%;
   height: 220px;
 }
-.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .foto-e-social li {
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe .foto-e-social li {
   list-style: none;
+  display: inline;
+  margin: 10px;
+  color: #333;
 }
-.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo {
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe .foto-e-social li .icon {
+  color: #333 !important;
+}
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe .informacoes-pessoais {
   text-align: left;
   list-style: none;
   padding: 30px 20px 0 0;
 }
-.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo .titulo-curriculo {
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe .informacoes-pessoais .titulo-curriculo {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   border-bottom: solid;
@@ -95,23 +129,26 @@ html, body {
   margin-bottom: 10px;
   border-bottom: 1px solid;
 }
-.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo p {
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe .informacoes-pessoais p {
   font-family: "Open Sans", sans-serif;
   color: #7b838c;
   font-size: 18px;
   font-weight: none;
 }
-.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo li {
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe .informacoes-pessoais li {
   list-style: none;
   margin: 10px 0;
 }
-.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo .experiencia p {
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe .informacoes-pessoais .experiencia p {
   font-family: "Open Sans", sans-serif;
   color: #7b838c;
   font-size: 19px;
   font-weight: none;
 }
-.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo .habilidades .habilidade-titulo {
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe .informacoes-pessoais .habilidades {
+  padding-bottom: 50px;
+}
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe .informacoes-pessoais .habilidades .habilidade-titulo {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   border-bottom: solid;
@@ -126,13 +163,16 @@ html, body {
   margin-bottom: 10px;
   border-bottom: 1px solid;
 }
-.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo .habilidades .habilidade-nome {
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe .informacoes-pessoais .habilidades .habilidade-nome {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   text-transform: inherit;
   color: #2c3e50;
   font-size: 16px;
   padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.5;
   font-size: 20px;
   margin: 0;
   width: 100%;
@@ -140,31 +180,40 @@ html, body {
   border-bottom: 1px solid;
   padding: 10px 0 10px 0;
 }
-.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo .habilidades .habilidade-nome .porcentagem {
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe .informacoes-pessoais .habilidades .habilidade-nome .porcentagem {
   float: right;
 }
-.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo .habilidades .tarja-completa-borda {
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe .informacoes-pessoais .habilidades .tarja-completa-borda {
   width: 100%;
   border: solid 2px #2c3e50;
 }
-.fundo-banner-equipe-fundo .box-interno-banner-equipe .conteudo-principal-banner-equipe .curriculo .habilidades .tarja-completa-borda .tarja-conhecimento-prcentagem {
-  width: 60%;
+.container-banner .box-interno-banner .conteudo-principal-banner-equipe .informacoes-pessoais .habilidades .tarja-completa-borda .tarja-conhecimento-porcentagem {
   height: 10px;
   background-color: #01c0b5;
 }
 
 .cabecario {
   height: 600px;
+  position: relative;
   background: url(../imgs/img-cabecalho.jpg) no-repeat;
-  background-size: cover;
-  background-position: center 68px;
+  background-size: 130% 100%;
   box-sizing: border-box;
+  animation-name: animacabecario;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transition: 0.5s;
 }
 .cabecario .cabecalho-top {
+  max-width: 1400px;
+  width: 100%;
   height: 67px;
   background-color: #fff;
-  padding: 0 10%;
   border-top: solid 4px #2d3f51;
+  position: fixed;
+  box-sizing: border-box;
+  z-index: 998;
+  padding: 0 10%;
 }
 .cabecario .cabecalho-top .logo {
   position: relative;
@@ -179,6 +228,7 @@ html, body {
 .cabecario .cabecalho-top .menu {
   float: right;
   width: 75%;
+  text-align: right;
 }
 .cabecario .cabecalho-top .menu li {
   display: inline-block;
@@ -213,13 +263,16 @@ html, body {
   text-transform: uppercase;
 }
 .cabecario .caixa-texto {
-  width: 40%;
-  margin: 150px auto 0 auto;
+  width: 60%;
   padding: 50px;
   background-color: rgba(216, 131, 85, 0.7);
   color: #fff;
   text-align: center;
   line-height: 1.5;
+  box-sizing: border-box;
+  position: absolute;
+  top: 260px;
+  left: 20%;
 }
 .cabecario .caixa-texto h1 {
   font-size: 40px;
@@ -233,6 +286,9 @@ html, body {
   color: #2c3e50;
   font-size: 16px;
   padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.5;
   color: #fff !important;
   font-size: 20px !important;
 }
@@ -245,21 +301,24 @@ html, body {
   float: left;
   background-color: #000;
   color: #fff;
-  font-size: 40px;
-  padding: 5px;
+  font-size: 107px;
+  padding: 11px 10px;
   cursor: pointer;
+  position: relative;
 }
 .cabecario .cetas .btrigth {
   float: right;
   color: #fff;
   background-color: #000;
-  font-size: 40px;
-  padding: 5px;
+  font-size: 107px;
+  padding: 11px 10px;
   cursor: pointer;
 }
 .cabecario .bullets {
   text-align: center;
-  margin-top: 90px;
+  position: absolute;
+  top: 500px;
+  left: 40%;
 }
 .cabecario .bullets :first-child {
   background-color: #f47933;
@@ -272,6 +331,14 @@ html, body {
   margin: 5px;
 }
 
+@keyframes animacabecario {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 20% 20%;
+  }
+}
 .agencia {
   padding: 70px 0 30px 0;
   text-align: center;
@@ -296,12 +363,15 @@ html, body {
   color: #2c3e50;
   font-size: 16px;
   padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.5;
 }
 
 .especialidades {
   background-color: #f5f5f5;
   text-align: center;
-  padding: 79px 10%;
+  padding: 40px 10% 0 10%;
 }
 .especialidades #titulo {
   font-family: "Oswald", sans-serif;
@@ -313,8 +383,7 @@ html, body {
   width: 150px;
   font-size: 25px;
   padding: 10px;
-  width: 100% !important;
-  border: none !important;
+  width: 350px;
 }
 .especialidades .titulo-card {
   border: none !important;
@@ -337,6 +406,9 @@ html, body {
   color: #2c3e50;
   font-size: 16px;
   padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.5;
 }
 .especialidades p {
   font-family: "Open Sans", sans-serif;
@@ -345,6 +417,9 @@ html, body {
   color: #2c3e50;
   font-size: 16px;
   padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.5;
 }
 .especialidades .container-cards-especialidades {
   display: grid;
@@ -353,20 +428,23 @@ html, body {
   padding: 50px 0;
 }
 .especialidades .container-cards-especialidades .card-especialidade {
+  box-sizing: border-box;
   width: 100%;
 }
+.especialidades .container-cards-especialidades .card-especialidade .img-especialidade {
+  height: 171px;
+  width: 70%;
+  margin: auto;
+}
 .especialidades .container-cards-especialidades .card-especialidade .caixa-img-01 {
-  height: 200px;
   background: url(../imgs/img-exemplo.png) no-repeat;
   background-size: 100% 100%;
 }
 .especialidades .container-cards-especialidades .card-especialidade .caixa-img-02 {
-  height: 200px;
   background: url(../imgs/experimente.png) no-repeat;
   background-size: 100% 100%;
 }
 .especialidades .container-cards-especialidades .card-especialidade .caixa-img-03 {
-  height: 200px;
   background: url(../imgs/perfeicao.png) no-repeat;
   background-size: 100% 100%;
 }
@@ -420,6 +498,9 @@ html, body {
   color: #2c3e50;
   font-size: 16px;
   padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.5;
   color: #fff !important;
   text-transform: uppercase;
   font-weight: 200 !important;
@@ -427,7 +508,7 @@ html, body {
 
 .equipe {
   text-align: center;
-  padding-top: 85px;
+  padding-top: 50px;
 }
 .equipe h2 {
   font-family: "Oswald", sans-serif;
@@ -447,6 +528,9 @@ html, body {
   color: #2c3e50;
   font-size: 16px;
   padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.5;
 }
 .equipe .caixa-menbros-equipe {
   padding: 60px 10%;
@@ -540,6 +624,7 @@ html, body {
 
 .servicos {
   text-align: center;
+  padding-top: 50px;
 }
 .servicos .titulo-sevico {
   font-family: "Oswald", sans-serif;
@@ -559,6 +644,10 @@ html, body {
   color: #2c3e50;
   font-size: 16px;
   padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.5;
+  margin: 0 auto;
 }
 .servicos .container-cards-servico {
   padding: 70px 10%;
@@ -655,6 +744,9 @@ html, body {
   color: #2c3e50;
   font-size: 16px;
   padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.5;
 }
 .testemunhas .box-testemunhas-grid {
   padding: 50px 10%;
@@ -687,11 +779,15 @@ html, body {
   color: #2c3e50;
   font-size: 16px;
   padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.5;
   padding: 0 !important;
 }
 
 .portfolio {
   text-align: center;
+  padding: 70px;
 }
 .portfolio .texto-portfolio {
   padding: 40px 0;
@@ -714,6 +810,10 @@ html, body {
   color: #2c3e50;
   font-size: 16px;
   padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.5;
+  margin: 0 auto;
 }
 .portfolio .works ul {
   margin-bottom: 20px;
@@ -767,36 +867,6 @@ html, body {
   opacity: 1;
   transition: 0.5s;
 }
-.portfolio .grid-trabalhos .work-01 {
-  background-image: url(../imgs/img-works-01.jpg);
-}
-.portfolio .grid-trabalhos .work-02 {
-  background-image: url(../imgs/img-works-02.jpg);
-}
-.portfolio .grid-trabalhos .work-03 {
-  background-image: url(../imgs/img-works-03.jpg);
-}
-.portfolio .grid-trabalhos .work-04 {
-  background-image: url(../imgs/img-works-01.jpg);
-}
-.portfolio .grid-trabalhos .work-05 {
-  background-image: url(../imgs/img-works-02.jpg);
-}
-.portfolio .grid-trabalhos .work-06 {
-  background-image: url(../imgs/img-works-03.jpg);
-}
-.portfolio .grid-trabalhos .work-07 {
-  background-image: url(../imgs/img-works-01.jpg);
-}
-.portfolio .grid-trabalhos .work-08 {
-  background-image: url(../imgs/img-works-02.jpg);
-}
-.portfolio .grid-trabalhos .work-09 {
-  background-image: url(../imgs/img-works-03.jpg);
-}
-.portfolio .grid-trabalhos .work-10 {
-  background-image: url(../imgs/img-works-01.jpg);
-}
 
 .clientes {
   text-align: center;
@@ -813,7 +883,7 @@ html, body {
   width: 150px;
   font-size: 25px;
   padding: 10px;
-  width: 43% !important;
+  width: 234px !important;
 }
 .clientes ul {
   margin-top: 20px;
@@ -870,6 +940,9 @@ html, body {
   color: #2c3e50;
   font-size: 16px;
   padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.5;
 }
 .blog .container-posts {
   display: grid;
@@ -919,6 +992,7 @@ html, body {
 
 .contato {
   text-align: center;
+  padding-top: 50px;
 }
 .contato .top-contato {
   padding: 40px;
@@ -941,9 +1015,13 @@ html, body {
   color: #2c3e50;
   font-size: 16px;
   padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.5;
+  margin: 0 auto;
 }
 .contato .meios-contato {
-  padding: 10%;
+  padding: 6%;
   background-image: url(../imgs/img-fundo-contato.jpg);
   background-size: 100% 100%;
   background-attachment: fixed;
@@ -956,13 +1034,16 @@ html, body {
   color: #2c3e50;
   font-size: 16px;
   padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.5;
   font-size: 30px !important;
 }
 .contato .meios-contato .number {
-  width: 20%;
+  width: 50%;
+  min-width: 160px;
   color: #000 !important;
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 10px 100px;
   margin: 0 auto;
 }
 .contato .form {
@@ -1008,6 +1089,9 @@ html, body {
   color: #2c3e50;
   font-size: 16px;
   padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.5;
 }
 .contato .form form .textarea {
   width: 50%;
@@ -1091,23 +1175,38 @@ html, body {
   .icon-hamburger {
     display: block;
     float: right;
-    margin: 12px;
-  }
-
-  .especialidades .container-cards-especialidades {
-    grid-template-columns: 50% 50%;
+    padding: 16px 30px;
+    cursor: pointer;
   }
 
   .curiosidades ul li {
-    display: block;
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+  .conteudo-principal-banner-equipe {
+    grid-template-columns: 40% 60% !important;
+  }
+
+  .box-interno-banner {
+    width: 80% !important;
+    margin: 0 10% !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .card-especialidade .img-especialidade {
+    height: 171px;
+    width: 90% !important;
+    margin: auto;
   }
 
   .equipe .caixa-menbros-equipe {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 33% 33% 33%;
   }
 
   .servicos .container-cards-servico {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 33% 33% 33%;
   }
 
   .testemunhas .box-testemunhas-grid {
@@ -1134,13 +1233,112 @@ html, body {
     width: 100%;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 800px) {
+  .curiosidades ul {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+}
+@media (max-width: 800px) {
+  .cabecario {
+    height: 300px;
+  }
   .cabecario .caixa-texto {
-    margin: 60px auto 0 auto;
+    width: 70%;
+    height: 150px;
+    padding: 30px 10px;
+    position: absolute;
+    top: 98px;
+    left: 15%;
+  }
+  .cabecario .caixa-texto h1 {
+    font-size: 30px;
+  }
+  .cabecario .caixa-texto p {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    text-transform: inherit;
+    color: #2c3e50;
+    font-size: 16px;
+    padding: 10px;
+    max-width: 500px;
+    margin: auto;
+    line-height: 1.5;
+    font-size: 18px !important;
+  }
+  .cabecario .bullets {
+    position: absolute;
+    width: 50%;
+    top: 260px;
+    left: 25%;
+  }
+  .cabecario .cetas {
+    top: 150px;
+  }
+  .cabecario .cetas .btleft {
+    font-size: 50px;
+  }
+  .cabecario .cetas .btrigth {
+    font-size: 50px;
+  }
+
+  .cards-especialidades {
+    width: 80%;
+  }
+
+  .especialidades .container-cards-especialidades {
+    grid-template-columns: 50% 50%;
+  }
+
+  .conteudo-principal-banner-equipe {
+    grid-template-columns: 100% !important;
+    background-position: center;
+  }
+
+  .box-interno-banner {
+    width: 80%;
+    margin: 0 10%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .curiosidades ul {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+  }
+
+  .equipe .caixa-menbros-equipe {
+    grid-template-columns: 59% 50%;
+  }
+
+  .servicos .container-cards-servico {
+    grid-template-columns: 50% 50%;
+  }
+}
+@media (max-width: 700px) {
+  .curiosidades ul {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+}
+@media (max-width: 500px) {
+  .icon-hamburger {
+    padding: 18px;
+  }
+
+  .cabecario .caixa-texto {
+    width: 70%;
+    height: 150px;
+    left: 15%;
+    top: 100px;
+    padding: 20px 10px;
+    box-sizing: border-box;
   }
 
   .cabecario .bullets {
-    margin-top: 28px;
+    position: absolute;
+    width: 60%;
+    top: 260px;
   }
 
   .menu {
@@ -1151,8 +1349,9 @@ html, body {
     grid-template-columns: 100%;
   }
 
-  .curiosidades ul li {
-    display: block;
+  .curiosidades ul {
+    display: grid;
+    grid-template-columns: 100%;
   }
 
   .equipe .caixa-menbros-equipe {
